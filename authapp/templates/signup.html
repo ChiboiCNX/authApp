@@ -1,0 +1,57 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Signup</title>
+    <link rel="stylesheet" href="{% static '/styles/signup.css' %}" />
+  </head>
+  <body>
+     <div class="right-panel">
+    <h2>Get Started Now</h2>
+    <form action="" method="post">
+      {% csrf_token %} {{ form.non_field_errors }}
+      <div class="form-group">
+        <label for="name">{{ form.name.label }}</label>
+        {{ form.name }} {{ form.name.errors }}
+      </div>
+      <div class="form-group">
+        <label for="email">{{ form.email.label }}</label>
+        {{ form.email }} {{ form.email.errors }}
+      </div>
+      <div class="form-group">
+        <label for="password">{{ form.password.label }}</label>
+        {{ form.password }} {{ form.password.errors }}
+      </div>
+      <div class="form-group check-box">
+        {{ form.terms }}
+        <label for="terms">{{ form.terms.label }}</label>
+        {{ form.terms.errors }}
+      </div>
+      <button type="submit" class="submit-btn">Signup</button>
+    </form>
+
+    <div class="social-login">
+      <button>
+        <img
+          src="{% static 'images/google-color-svgrepo-com.svg' %}"
+          alt="Google logo"
+        />
+        Sign in with Google
+      </button>
+      <button>
+        <img
+          src="{% static 'images/apple-173-svgrepo-com.svg' %}"
+          alt="Apple logo"
+        />
+        Sign in with Apple
+      </button>
+    </div>
+    <div class="login-link">
+      <p>Have an account? <a href="{% url 'signin' %}">Sign In</a></p>
+    </div>
+  </div>
+</div>
+  </body>
+</html>

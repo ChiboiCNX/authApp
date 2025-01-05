@@ -1,0 +1,77 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  background: linear-gradient(135deg, #ff7eb3, #ff758c);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  color: #fff;
+}
+
+/* Container */
+.container {
+  text-align: center;
+}
+
+.confirmation-box {
+  background: rgba(0, 0, 0, 0.6);
+  padding: 40px;
+  border-radius: 12px;
+  box-shadow: 0px 10px 15px rgba(0, 0, 0, 0.2);
+  width: 80%;
+  max-width: 400px;
+}
+
+/* Buttons */
+.buttons {
+  margin-top: 20px;
+}
+
+.btn {
+  display: inline-block;
+  padding: 12px 24px;
+  margin: 10px;
+  font-size: 16px;
+  font-weight: bold;
+  text-decoration: none;
+  border-radius: 8px;
+  border: 2px solid transparent;
+  transition: all 0.3s ease-in-out;
+  cursor: pointer;
+}
+
+/* Yes Button */
+.yes-btn {
+  background-color: #28a745;
+  color: #fff;
+  border-color: #28a745;
+}
+
+.yes-btn:hover {
+  background-color: #fff;
+  color: #28a745;
+  transform: scale(1.1);
+  box-shadow: 0px 4px 15px rgba(40, 167, 69, 0.4);
+}
+
+/* No Button */
+.no-btn {
+  background-color: #dc3545;
+  color: #fff;
+  border-color: #dc3545;
+}
+
+.no-btn:hover {
+  background-color: #fff;
+  color: #dc3545;
+  transform: scale(1.1);
+  box-shadow: 0px 4px 15px rgba(220, 53, 69, 0.4);
+}
