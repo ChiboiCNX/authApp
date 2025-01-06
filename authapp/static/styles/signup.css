@@ -18,16 +18,26 @@ body {
   display: flex;
   height: 100%;
   width: 100%;
+  max-width: 1200px;
   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
   border-radius: 10px;
   overflow: hidden;
 }
 
 .left-panel {
-  width: 50%;
-  background-image: url("images/chris-lee-70l1tDAI6rM-unsplash\ 2.jpg"); /* Replace with koi fish image URL */
+  /* background-image: url("koi-background.jpg");
   background-size: cover;
-  background-position: center;
+  background-position: center; */
+  width: 50%;
+  height: 100vh;
+  background-color: aqua;
+  border-radius: 30px 0 0 30px;
+}
+
+.grafitti-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 .right-panel {
@@ -57,7 +67,7 @@ body {
 
 .form-group input[type="text"],
 .form-group input[type="email"],
-.form-group input[type="password"] {
+.form-group input[type="password"] .form-group input[type="confirm-password"] {
   width: 100%;
   padding: 10px;
   font-size: 14px;
@@ -71,21 +81,7 @@ body {
 
 .check-box {
   display: flex;
-  justify-content: center;
   align-items: center;
-  flex-direction: row;
-  /* background-color: aqua; */
-  width: 200px;
-  height: 70px;
-}
-
-.form-group a {
-  color: #007bff;
-  text-decoration: none;
-}
-
-.form-group a:hover {
-  text-decoration: underline;
 }
 
 .submit-btn {
@@ -98,11 +94,17 @@ body {
   border: none;
   border-radius: 10px;
   cursor: pointer;
-  transition: background-color 0.3s;
+  transition: background-color 0.3s, transform 0.1s;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .submit-btn:hover {
   background-color: #003737;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.submit-btn:active {
+  transform: scale(0.98);
 }
 
 .social-login {
@@ -121,8 +123,9 @@ body {
   border-radius: 10px;
   cursor: pointer;
   background-color: #fff;
-  transition: background-color 0.3s;
+  transition: background-color 0.3s, box-shadow 0.3s;
   font-weight: bold;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .social-login button img {
@@ -132,6 +135,7 @@ body {
 
 .social-login button:hover {
   background-color: #f0f0f0;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 .login-link {
@@ -149,4 +153,18 @@ body {
 
 .login-link a:hover {
   text-decoration: underline;
+}
+
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column;
+  }
+  .left-panel,
+  .right-panel {
+    width: 100%;
+    height: 50vh;
+  }
+  .right-panel {
+    padding: 20px;
+  }
 }

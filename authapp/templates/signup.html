@@ -1,57 +1,95 @@
 {% load static %}
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Signup</title>
-    <link rel="stylesheet" href="{% static '/styles/signup.css' %}" />
+    <link rel="stylesheet" href="{% static 'styles/signup.css' %}" />
   </head>
   <body>
-     <div class="right-panel">
-    <h2>Get Started Now</h2>
-    <form action="" method="post">
-      {% csrf_token %} {{ form.non_field_errors }}
-      <div class="form-group">
-        <label for="name">{{ form.name.label }}</label>
-        {{ form.name }} {{ form.name.errors }}
+    <div class="container">
+      <div class="left-panel">
+        <img
+          src="{% static 'images/chris-lee-70l1tDAI6rM-unsplash 2.jpg' %}"
+          alt="image"
+          class="grafitti-image"
+        />
       </div>
-      <div class="form-group">
-        <label for="email">{{ form.email.label }}</label>
-        {{ form.email }} {{ form.email.errors }}
-      </div>
-      <div class="form-group">
-        <label for="password">{{ form.password.label }}</label>
-        {{ form.password }} {{ form.password.errors }}
-      </div>
-      <div class="form-group check-box">
-        {{ form.terms }}
-        <label for="terms">{{ form.terms.label }}</label>
-        {{ form.terms.errors }}
-      </div>
-      <button type="submit" class="submit-btn">Signup</button>
-    </form>
+      <div class="right-panel">
+        <h2>Get Started Now</h2>
+        <form action="/signup" method="post">
+          {% csrf_token %}
+          <div class="form-group">
+            <label for="name">Name</label>
+            <input
+              type="text"
+              id="name"
+              name="name"
+              placeholder="Enter your name"
+              required
+            />
+          </div>
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input
+              type="email"
+              id="email"
+              name="email"
+              placeholder="Enter your email"
+              required
+            />
+          </div>
+          <div class="form-group">
+            <label for="password">Password</label>
+            <input
+              type="password"
+              id="password"
+              name="password"
+              placeholder="Enter your password"
+              required
+            />
+          </div>
 
-    <div class="social-login">
-      <button>
-        <img
-          src="{% static 'images/google-color-svgrepo-com.svg' %}"
-          alt="Google logo"
-        />
-        Sign in with Google
-      </button>
-      <button>
-        <img
-          src="{% static 'images/apple-173-svgrepo-com.svg' %}"
-          alt="Apple logo"
-        />
-        Sign in with Apple
-      </button>
+          <div class="form-group">
+            <label for="confirm-password">confirm-password</label>
+            <input
+              type="text"
+              id="confirm-password"
+              name="confirm-password"
+              placeholder="Enter your confirm-password"
+              required
+            />
+          </div>
+
+          <div class="form-group check-box">
+            <input type="checkbox" id="terms" name="terms" required />
+            <label for="terms">I agree to the terms and conditions</label>
+          </div>
+          <button type="submit" class="submit-btn">Signup</button>
+        </form>
+
+        <div class="social-login">
+          <button>
+            <img
+              src="{% static 'images/google-color-svgrepo-com.svg' %}"
+              alt="Google logo"
+            />
+            Sign in with Google
+          </button>
+          <button>
+            <img
+              src="{% static 'images/apple-173-svgrepo-com.svg' %}"
+              alt="Apple logo"
+            />
+            Sign in with Apple
+          </button>
+        </div>
+        <div class="login-link">
+          <p>Have an account? <a href="/signin">Sign In</a></p>
+        </div>
+      </div>
     </div>
-    <div class="login-link">
-      <p>Have an account? <a href="{% url 'signin' %}">Sign In</a></p>
-    </div>
-  </div>
-</div>
   </body>
 </html>

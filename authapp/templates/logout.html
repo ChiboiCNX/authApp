@@ -1,4 +1,4 @@
-{{% load static %}}
+{% load static %}
 
 <!DOCTYPE html>
 <html lang="en">
@@ -6,15 +6,15 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>logout</title>
-    <link rel="stylesheet" href="{% static '/styles/logout.css' %}" />
+    <link rel="stylesheet" href="{% static 'styles/logout.css' %}" />
   </head>
   <body>
     <div class="container">
       <div class="confirmation-box">
         <h2>Are you sure you want to logout?</h2>
         <div class="buttons">
-          <a href="{% url 'signin' %}" class="btn yes-btn">Yes</a>
-          <a href="{% url 'home' %}" class="btn no-btn">No</a>
+          <a href="#" class="btn yes-btn">Yes</a>
+          <a href="#" class="btn no-btn">No</a>
         </div>
       </div>
     </div>
