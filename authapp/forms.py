@@ -11,11 +11,15 @@
 from django import forms
 from django.contrib.auth.models import User
 
-class CreateUserForm(forms.Form):
-    name = forms.CharField(max_length=150, required=True, label='Name')
-    email = forms.EmailField(required=True, label='Email')
+class CreateUserForm(forms.ModelForm):
+    # name = forms.CharField(max_length=150, required=True, label='Name')
+    # email = forms.EmailField(required=True, label='Email')
     password = forms.CharField(widget=forms.PasswordInput, required=True, label='Password')
     confirm_password = forms.CharField(widget=forms.PasswordInput, required=True, label='Confirm Password')
+
+    class Meta:
+        model = User
+        fields = ['username', 'email',]
 
     def clean(self):
         cleaned_data = super().clean()

@@ -30,6 +30,7 @@
               placeholder="Enter your name"
               required
             />
+            <div class="error">{{form.name.errors}}</div>
           </div>
           <div class="form-group">
             <label for="email">Email</label>
@@ -40,6 +41,7 @@
               placeholder="Enter your email"
               required
             />
+            <div class="error">{{form.email.errors}}</div>
           </div>
           <div class="form-group">
             <label for="password">Password</label>
@@ -50,22 +52,25 @@
               placeholder="Enter your password"
               required
             />
+            <div class="error">{{form.password.errors}}</div>
           </div>
 
           <div class="form-group">
-            <label for="confirm-password">confirm-password</label>
+            <label for="confirm-password">Confirm Password</label>
             <input
-              type="text"
+              type="password"
               id="confirm-password"
               name="confirm-password"
               placeholder="Enter your confirm-password"
               required
             />
+            <div class="error">{{form.confirm_password.errors}}</div>
           </div>
 
           <div class="form-group check-box">
             <input type="checkbox" id="terms" name="terms" required />
             <label for="terms">I agree to the terms and conditions</label>
+            <div class="error">{{form.terms.errors}}</div>
           </div>
           <button type="submit" class="submit-btn">Signup</button>
         </form>
