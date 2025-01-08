@@ -1,89 +1,11 @@
-{% load static %}
-
 <!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Signin</title>
-    <link rel="stylesheet" href="{% static 'styles/signin.css' %}" />
+    <title>Sign In</title>
   </head>
   <body>
-    <div class="container">
-      <!-- Left section with background image -->
-      <div class="left-section">
-        <img
-          src="{% static 'images/chris-lee-70l1tDAI6rM-unsplash 2.jpg' %}"
-          alt="image"
-          class="grafitti-image"
-        />
-      </div>
-
-      <!-- Right section for the login form -->
-      <div class="right-section">
-        <div class="login-box">
-          <h2>Welcome back!</h2>
-          <p>Enter your Credentials to access your account</p>
-          <form id="login-form" method="post" action="{% url 'signin' %}">
-            {% csrf_token %} {% if messages %}
-            <ul class="messages">
-              {% for message in messages %}
-              <li class="{{ message.tags }}">{{ message }}</li>
-              {% endfor %}
-            </ul>
-            {% endif %}
-
-            <label for="email">Email address</label>
-            <input
-              type="email"
-              id="email"
-              name="email"
-              placeholder="Enter your email"
-              required
-            />
-
-            <label for="password">Password</label>
-            <input
-              type="password"
-              id="password"
-              name="password"
-              placeholder="Enter your password"
-              required
-            />
-
-            <div class="actions">
-              <div class="remember-me">
-                <input type="checkbox" id="remember" name="remember" />
-                <label for="remember">Remember for 30 days</label>
-              </div>
-              <a href="" class="forgot-password">Forgot password?</a>
-            </div>
-
-            <button type="submit" class="login-btn">Login</button>
-
-            <div class="social-login">
-              <button class="google-login">
-                <img
-                  src="{% static 'images/google-color-svgrepo-com.svg' %}"
-                  alt="Google icon"
-                />
-                Sign in with Google
-              </button>
-              <button class="apple-login">
-                <img
-                  src="{% static 'images/apple-173-svgrepo-com.svg' %}"
-                  alt="Apple icon"
-                />
-                Sign in with Apple
-              </button>
-            </div>
-          </form>
-
-          <p class="signup-link">
-            Don't have an account? <a href="{% url 'signup' %}">Sign Up</a>
-          </p>
-        </div>
-      </div>
-    </div>
+    <h1>Sign In</h1>
   </body>
 </html>

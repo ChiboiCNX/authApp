@@ -1,4 +1,23 @@
-{% load static %}
+<!-- <!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sign In</title>
+  </head>
+  <body>
+    <h1>Sign In</h1>
+
+    <form method="post">
+      {% csrf_token %} {{form.username.label}} {{form.username}}
+      {{form.email.label}} {{form.email}} {{form.password1.label}}
+      {{form.password1}} {{form.password2.label}} {{form.password2}}
+      <button type="submit">Sign Up</button>
+    </form>
+  </body>
+</html> -->
+
+{% load static %} {% load widget_tweaks %}
 
 <!DOCTYPE html>
 <html lang="en">
@@ -21,57 +40,45 @@
         <h2>Get Started Now</h2>
         <form action="/signup" method="post">
           {% csrf_token %}
+          <!-- Name Field -->
           <div class="form-group">
-            <label for="name">Name</label>
-            <input
-              type="text"
-              id="name"
-              name="name"
-              placeholder="Enter your name"
-              required
-            />
-            <div class="error">{{form.name.errors}}</div>
+            <label for="username">Name</label>
+            <div class="form-input">
+              {{ form.username|add_class:"custom-input" }}
+            </div>
           </div>
+
+          <!-- Email Field -->
           <div class="form-group">
             <label for="email">Email</label>
-            <input
-              type="email"
-              id="email"
-              name="email"
-              placeholder="Enter your email"
-              required
-            />
-            <div class="error">{{form.email.errors}}</div>
-          </div>
-          <div class="form-group">
-            <label for="password">Password</label>
-            <input
-              type="password"
-              id="password"
-              name="password"
-              placeholder="Enter your password"
-              required
-            />
-            <div class="error">{{form.password.errors}}</div>
+            <div class="form-input">
+              {{ form.email|add_class:"custom-input" }}
+            </div>
           </div>
 
+          <!-- Password Field -->
           <div class="form-group">
-            <label for="confirm-password">Confirm Password</label>
-            <input
-              type="password"
-              id="confirm-password"
-              name="confirm-password"
-              placeholder="Enter your confirm-password"
-              required
-            />
-            <div class="error">{{form.confirm_password.errors}}</div>
+            <label for="password1">Password</label>
+            <div class="form-input">
+              {{ form.password1|add_class:"custom-input" }}
+            </div>
           </div>
 
+          <!-- Confirm Password Field -->
+          <div class="form-group">
+            <label for="password2">Confirm Password</label>
+            <div class="form-input">
+              {{ form.password2|add_class:"custom-input" }}
+            </div>
+          </div>
+
+          <!-- Terms and Conditions -->
           <div class="form-group check-box">
             <input type="checkbox" id="terms" name="terms" required />
             <label for="terms">I agree to the terms and conditions</label>
-            <div class="error">{{form.terms.errors}}</div>
           </div>
+
+          <!-- Submit Button -->
           <button type="submit" class="submit-btn">Signup</button>
         </form>
 
